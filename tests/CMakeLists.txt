@@ -1,13 +1,11 @@
-{% if language.name == "C" %}
 #-----------------------------------------------------------------------------------------------------------------------
 # Settings
 #-----------------------------------------------------------------------------------------------------------------------
 enable_language(CXX)
-set(CMAKE_CXX_STANDARD {{ language.std }})
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-{% endif %}
 #-----------------------------------------------------------------------------------------------------------------------
 # Google Test
 #-----------------------------------------------------------------------------------------------------------------------
@@ -15,39 +13,30 @@ include(GoogleTest)
 enable_testing()
 
 #-----------------------------------------------------------------------------------------------------------------------
-# Target: {{ project.name }}_test
-# Alias: {{ project.namespace }}::{{ project.name }}_test
+# Target: c_type_traits_test
+# Alias: c_type_traits::c_type_traits_test
 # Type: Executable
-{% if project.type != "Executable" %}
-# Dependencies: GTest::gtest_main, GTest::gmock_main, {{ project.namespace }}::{{ project.name }}_headers
-{% else %}
-# Dependencies: GTest::gtest_main, GTest::gmock_main
-{% endif %}
+# Dependencies: GTest::gtest_main, GTest::gmock_main, c_type_traits::c_type_traits_headers
 #-----------------------------------------------------------------------------------------------------------------------
 # Target definition
-add_executable({{ project.name }}_test)
+add_executable(c_type_traits_test)
 
 # Target alias
-add_executable({{ project.namespace }}::{{ project.name }}_test ALIAS {{ project.name }}_test)
+add_executable(c_type_traits::c_type_traits_test ALIAS c_type_traits_test)
 
 # Target sources
-target_sources({{ project.name }}_test
+target_sources(c_type_traits_test
     PRIVATE
-        {% if project.type == "Static Library" or project.type == "Shared Library" %}
-        ${CMAKE_SOURCE_DIR}/src/{{ project.name }}{{ language.src_ext }}
-        {% endif %}
-        ${CMAKE_CURRENT_SOURCE_DIR}/{{ project.name }}_test.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/c_type_traits_test.cpp
 )
 
 # Target dependencies
-target_link_libraries({{ project.name }}_test
+target_link_libraries(c_type_traits_test
     PRIVATE
-        {% if project.type != "Executable" %}
-        {{ project.namespace }}::{{ project.name }}_headers
-        {% endif %}
+        c_type_traits::c_type_traits_headers
         GTest::gtest_main
         GTest::gmock_main
 )
 
 # Test discovery
-gtest_discover_tests({{ project.name }}_test)
+gtest_discover_tests(c_type_traits_test)
