@@ -13,6 +13,9 @@ extern bool c_type_traits_testing_is_integral_non_ints(void);
 
 extern bool c_type_traits_testing_is_integral_alias_ints(void);
 
+extern bool c_type_traits_testing_is_pointer_ptr_types(void);
+
+extern bool c_type_traits_testing_is_pointer_non_ptr_types(void);
 
 #ifdef __cplusplus
 }
