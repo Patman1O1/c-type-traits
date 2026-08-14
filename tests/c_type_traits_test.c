@@ -16,7 +16,7 @@ enum test_enum { x, y };
 
 union test_union { int x; int y; };
 
-bool c_type_traits_tests_is_integral_ints(void) {
+bool c_type_traits_testing_is_integral_ints(void) {
     static_assert(c_type_traits_is_integral(char));
     static_assert(c_type_traits_is_integral(signed char));
     static_assert(c_type_traits_is_integral(unsigned char));
@@ -29,7 +29,7 @@ bool c_type_traits_tests_is_integral_ints(void) {
     return true;
 }
 
-bool c_type_traits_tests_is_integral_non_ints(void) {
+bool c_type_traits_testing_is_integral_non_ints(void) {
     static_assert(!c_type_traits_is_integral(bool));
     static_assert(!c_type_traits_is_integral(float));
     static_assert(!c_type_traits_is_integral(double));
@@ -40,7 +40,7 @@ bool c_type_traits_tests_is_integral_non_ints(void) {
     return true;
 }
 
-bool c_type_traits_tests_is_integral_alias_ints(void) {
+bool c_type_traits_testing_is_integral_alias_ints(void) {
     static_assert(c_type_traits_is_integral(int8_t));
     static_assert(c_type_traits_is_integral(uint8_t));
     static_assert(c_type_traits_is_integral(int16_t));
