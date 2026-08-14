@@ -1,6 +1,3 @@
-// ISO C++ Includes
-#include <type_traits>
-
 // Google Test Includes
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
