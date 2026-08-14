@@ -21,4 +21,8 @@ namespace c_type_traits_testing {
     TEST(is_integral, non_int_types) {
         EXPECT_TRUE(c_type_traits_tests_is_integral_non_ints());
     }
+
+    TEST(is_integral, alias_int_types) {
+        EXPECT_TRUE(c_type_traits_tests_is_integral_alias_ints());
+    }
 } // namespace c_type_traits_testing
