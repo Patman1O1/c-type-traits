@@ -22,85 +22,85 @@ typedef double float64_t;
 
 typedef long double float128_t;
 
-bool c_type_traits_testing_is_integral_ints(void) {
-    static_assert(c_type_traits_is_integral(char));
-    static_assert(c_type_traits_is_integral(signed char));
-    static_assert(c_type_traits_is_integral(unsigned char));
-    static_assert(c_type_traits_is_integral(int));
-    static_assert(c_type_traits_is_integral(unsigned int));
-    static_assert(c_type_traits_is_integral(long int));
-    static_assert(c_type_traits_is_integral(unsigned long int));
-    static_assert(c_type_traits_is_integral(long long int));
-    static_assert(c_type_traits_is_integral(unsigned long long int));
+bool c_type_traits_testing_is_int_ints(void) {
+    static_assert(c_type_traits_is_int(char));
+    static_assert(c_type_traits_is_int(signed char));
+    static_assert(c_type_traits_is_int(unsigned char));
+    static_assert(c_type_traits_is_int(int));
+    static_assert(c_type_traits_is_int(unsigned int));
+    static_assert(c_type_traits_is_int(long int));
+    static_assert(c_type_traits_is_int(unsigned long int));
+    static_assert(c_type_traits_is_int(long long int));
+    static_assert(c_type_traits_is_int(unsigned long long int));
     return true;
 }
 
-bool c_type_traits_testing_is_integral_non_ints(void) {
-    static_assert(!c_type_traits_is_integral(bool));
-    static_assert(!c_type_traits_is_integral(float));
-    static_assert(!c_type_traits_is_integral(double));
-    static_assert(!c_type_traits_is_integral(long double));
-    static_assert(!c_type_traits_is_integral(struct test_struct));
-    static_assert(!c_type_traits_is_integral(enum test_enum));
-    static_assert(!c_type_traits_is_integral(union test_union));
-
-    return true;
-}
-
-bool c_type_traits_testing_is_integral_alias_ints(void) {
-    static_assert(c_type_traits_is_integral(int8_t));
-    static_assert(c_type_traits_is_integral(uint8_t));
-    static_assert(c_type_traits_is_integral(int16_t));
-    static_assert(c_type_traits_is_integral(uint16_t));
-    static_assert(c_type_traits_is_integral(int32_t));
-    static_assert(c_type_traits_is_integral(uint32_t));
-    static_assert(c_type_traits_is_integral(int64_t));
-    static_assert(c_type_traits_is_integral(uint64_t));
-    static_assert(c_type_traits_is_integral(size_t));
-
-    static_assert(c_type_traits_is_integral(ptrdiff_t));
-    return true;
-}
-
-bool c_type_traits_testing_is_pointer_ptr_types(void) {
-    static_assert(c_type_traits_is_pointer(void*));
-    static_assert(c_type_traits_is_pointer(int*));
-    static_assert(c_type_traits_is_pointer(char*));
-    static_assert(c_type_traits_is_pointer(void**));
-    static_assert(c_type_traits_is_pointer(void***));
+bool c_type_traits_testing_is_int_non_ints(void) {
+    static_assert(!c_type_traits_is_int(bool));
+    static_assert(!c_type_traits_is_int(float));
+    static_assert(!c_type_traits_is_int(double));
+    static_assert(!c_type_traits_is_int(long double));
+    static_assert(!c_type_traits_is_int(struct test_struct));
+    static_assert(!c_type_traits_is_int(enum test_enum));
+    static_assert(!c_type_traits_is_int(union test_union));
 
     return true;
 }
 
-bool c_type_traits_testing_is_pointer_non_ptr_types(void) {
-    static_assert(!c_type_traits_is_pointer(intptr_t));
-    static_assert(!c_type_traits_is_pointer(uintptr_t));
-    static_assert(!c_type_traits_is_pointer(int));
-    static_assert(!c_type_traits_is_pointer(char));
+bool c_type_traits_testing_is_int_alias_ints(void) {
+    static_assert(c_type_traits_is_int(int8_t));
+    static_assert(c_type_traits_is_int(uint8_t));
+    static_assert(c_type_traits_is_int(int16_t));
+    static_assert(c_type_traits_is_int(uint16_t));
+    static_assert(c_type_traits_is_int(int32_t));
+    static_assert(c_type_traits_is_int(uint32_t));
+    static_assert(c_type_traits_is_int(int64_t));
+    static_assert(c_type_traits_is_int(uint64_t));
+    static_assert(c_type_traits_is_int(size_t));
+
+    static_assert(c_type_traits_is_int(ptrdiff_t));
+    return true;
+}
+
+bool c_type_traits_testing_is_ptr_ptr_types(void) {
+    static_assert(c_type_traits_is_ptr(void*));
+    static_assert(c_type_traits_is_ptr(int*));
+    static_assert(c_type_traits_is_ptr(char*));
+    static_assert(c_type_traits_is_ptr(void**));
+    static_assert(c_type_traits_is_ptr(void***));
 
     return true;
 }
 
-bool c_type_traits_testing_is_floating_point_floats(void) {
-    static_assert(c_type_traits_is_floating_point(float));
-    static_assert(c_type_traits_is_floating_point(double));
-    static_assert(c_type_traits_is_floating_point(long double));
+bool c_type_traits_testing_is_ptr_non_ptr_types(void) {
+    static_assert(!c_type_traits_is_ptr(intptr_t));
+    static_assert(!c_type_traits_is_ptr(uintptr_t));
+    static_assert(!c_type_traits_is_ptr(int));
+    static_assert(!c_type_traits_is_ptr(char));
 
     return true;
 }
 
-bool c_type_traits_testing_is_floating_point_non_floats(void) {
-    static_assert(!c_type_traits_is_floating_point(int));
-    static_assert(!c_type_traits_is_floating_point(char));
-    static_assert(!c_type_traits_is_floating_point(bool));
+bool c_type_traits_testing_is_float_floats(void) {
+    static_assert(c_type_traits_is_float(float));
+    static_assert(c_type_traits_is_float(double));
+    static_assert(c_type_traits_is_float(long double));
+
+    return true;
+}
+
+bool c_type_traits_testing_is_float_non_floats(void) {
+    static_assert(!c_type_traits_is_float(int));
+    static_assert(!c_type_traits_is_float(char));
+    static_assert(!c_type_traits_is_float(bool));
     
     return true;
 }
 
-bool c_type_traits_testing_is_floating_point_alias_floats(void) {
-    static_assert(c_type_traits_is_floating_point(float32_t));
-    static_assert(c_type_traits_is_floating_point(float64_t));
-    static_assert(c_type_traits_is_floating_point(float128_t));
+bool c_type_traits_testing_is_float_alias_floats(void) {
+    static_assert(c_type_traits_is_float(float32_t));
+    static_assert(c_type_traits_is_float(float64_t));
+    static_assert(c_type_traits_is_float(float128_t));
     
     return true;
 }
