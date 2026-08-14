@@ -49,5 +49,7 @@ bool c_type_traits_tests_is_integral_alias_ints(void) {
     static_assert(c_type_traits_is_integral(uint32_t));
     static_assert(c_type_traits_is_integral(int64_t));
     static_assert(c_type_traits_is_integral(uint64_t));
+    static_assert(c_type_traits_is_integral(size_t));
+    static_assert(c_type_traits_is_integral(ptrdiff_t));
     return true;
 }
