@@ -17,6 +17,12 @@ extern bool c_type_traits_testing_is_pointer_ptr_types(void);
 
 extern bool c_type_traits_testing_is_pointer_non_ptr_types(void);
 
+extern bool c_type_traits_testing_is_floating_point_floats(void);
+
+extern bool c_type_traits_testing_is_floating_point_non_floats(void);
+
+extern bool c_type_traits_testing_is_floating_point_alias_floats(void);
+
 #ifdef __cplusplus
 }
 #endif // #ifdef __cplusplus
