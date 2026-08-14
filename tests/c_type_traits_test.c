@@ -1,4 +1,3 @@
-#include <cmath>
 #define _GNU_SOURCE
 
 // ISO Includes
