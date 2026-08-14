@@ -30,4 +30,16 @@ namespace c_type_traits_testing {
     TEST(is_pointer, non_ptr_types) {
         EXPECT_TRUE(c_type_traits_testing_is_pointer_non_ptr_types());
     }
+
+    TEST(is_floating_point, float_types) {
+        EXPECT_TRUE(c_type_traits_testing_is_floating_point_floats());
+    }
+
+    TEST(is_floating_point, non_float_types) {
+        EXPECT_TRUE(c_type_traits_testing_is_floating_point_non_floats());
+    }
+
+    TEST(is_floating_point, alias_float_types) {
+        EXPECT_TRUE(c_type_traits_testing_is_floating_point_alias_floats());
+    }
 } // namespace c_type_traits_testing
