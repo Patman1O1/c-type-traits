@@ -22,4 +22,12 @@ namespace c_type_traits_testing {
     TEST(is_integral, alias_int_types) {
         EXPECT_TRUE(c_type_traits_testing_is_integral_alias_ints());
     }
+
+    TEST(is_pointer, ptr_types) {
+        EXPECT_TRUE(c_type_traits_testing_is_pointer_ptr_types());
+    }
+
+    TEST(is_pointer, non_ptr_types) {
+        EXPECT_TRUE(c_type_traits_testing_is_pointer_non_ptr_types());
+    }
 } // namespace c_type_traits_testing
