@@ -53,3 +53,20 @@ bool c_type_traits_testing_is_integral_alias_ints(void) {
     static_assert(c_type_traits_is_integral(ptrdiff_t));
     return true;
 }
+
+bool c_type_traits_testing_is_pointer_ptr_types(void) {
+    static_assert(c_type_traits_is_pointer(void*));
+    static_assert(c_type_traits_is_pointer(int*));
+    static_assert(c_type_traits_is_pointer(char*));
+    static_assert(c_type_traits_is_pointer(void**));
+    static_assert(c_type_traits_is_pointer(void***));
+
+    return true;
+}
+
+bool c_type_traits_testing_is_pointer_non_ptr_types(void) {
+    static_assert(!c_type_traits_is_pointer(intptr_t));
+    static_assert(!c_type_traits_is_pointer(uintptr_t));
+    static_assert(!c_type_traits_is_pointer(int));
+    static_assert(!c_type_traits_is_pointer(char));
+}
