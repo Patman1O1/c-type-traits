@@ -7,21 +7,21 @@
 extern "C" {
 #endif // #ifdef __cplusplus
 
-extern bool c_type_traits_testing_is_integral_ints(void);
+extern bool c_type_traits_testing_is_int_ints(void);
 
-extern bool c_type_traits_testing_is_integral_non_ints(void);
+extern bool c_type_traits_testing_is_int_non_ints(void);
 
-extern bool c_type_traits_testing_is_integral_alias_ints(void);
+extern bool c_type_traits_testing_is_int_alias_ints(void);
 
-extern bool c_type_traits_testing_is_pointer_ptr_types(void);
+extern bool c_type_traits_testing_is_ptr_ptr_types(void);
 
-extern bool c_type_traits_testing_is_pointer_non_ptr_types(void);
+extern bool c_type_traits_testing_is_ptr_non_ptr_types(void);
 
-extern bool c_type_traits_testing_is_floating_point_floats(void);
+extern bool c_type_traits_testing_is_float_floats(void);
 
-extern bool c_type_traits_testing_is_floating_point_non_floats(void);
+extern bool c_type_traits_testing_is_float_non_floats(void);
 
-extern bool c_type_traits_testing_is_floating_point_alias_floats(void);
+extern bool c_type_traits_testing_is_float_alias_floats(void);
 
 #ifdef __cplusplus
 }
