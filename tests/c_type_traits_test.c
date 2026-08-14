@@ -1,3 +1,4 @@
+#include <cmath>
 #define _GNU_SOURCE
 
 // ISO Includes
@@ -15,6 +16,12 @@ struct test_struct { int x; int y; };
 enum test_enum { x, y };
 
 union test_union { int x; int y; };
+
+typedef float float32_t;
+
+typedef double float64_t;
+
+typedef long double float128_t;
 
 bool c_type_traits_testing_is_integral_ints(void) {
     static_assert(c_type_traits_is_integral(char));
@@ -37,6 +44,7 @@ bool c_type_traits_testing_is_integral_non_ints(void) {
     static_assert(!c_type_traits_is_integral(struct test_struct));
     static_assert(!c_type_traits_is_integral(enum test_enum));
     static_assert(!c_type_traits_is_integral(union test_union));
+
     return true;
 }
 
@@ -50,6 +58,7 @@ bool c_type_traits_testing_is_integral_alias_ints(void) {
     static_assert(c_type_traits_is_integral(int64_t));
     static_assert(c_type_traits_is_integral(uint64_t));
     static_assert(c_type_traits_is_integral(size_t));
+
     static_assert(c_type_traits_is_integral(ptrdiff_t));
     return true;
 }
@@ -69,4 +78,30 @@ bool c_type_traits_testing_is_pointer_non_ptr_types(void) {
     static_assert(!c_type_traits_is_pointer(uintptr_t));
     static_assert(!c_type_traits_is_pointer(int));
     static_assert(!c_type_traits_is_pointer(char));
+
+    return true;
+}
+
+bool c_type_traits_testing_is_floating_point_floats(void) {
+    static_assert(c_type_traits_is_floating_point(float));
+    static_assert(c_type_traits_is_floating_point(double));
+    static_assert(c_type_traits_is_floating_point(long double));
+
+    return true;
+}
+
+bool c_type_traits_testing_is_floating_point_non_floats(void) {
+    static_assert(!c_type_traits_is_floating_point(int));
+    static_assert(!c_type_traits_is_floating_point(char));
+    static_assert(!c_type_traits_is_floating_point(bool));
+    
+    return true;
+}
+
+bool c_type_traits_testing_is_floating_point_alias_floats(void) {
+    static_assert(c_type_traits_is_floating_point(float32_t));
+    static_assert(c_type_traits_is_floating_point(float64_t));
+    static_assert(c_type_traits_is_floating_point(float128_t));
+    
+    return true;
 }
