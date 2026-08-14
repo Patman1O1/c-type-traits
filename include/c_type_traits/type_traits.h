@@ -10,13 +10,13 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#define c_type_traits_is_integral(type) \
+#define c_type_traits_is_int(type) \
     (__builtin_classify_type(type) == 1)
 
-#define c_type_traits_is_pointer(type) \
+#define c_type_traits_is_ptr(type) \
     (__builtin_classify_type(type) == 5)
 
-#define c_type_traits_is_floating_point(type) \
+#define c_type_traits_is_float(type) \
     (__builtin_classify_type(type) == 8)
 
 #endif // #ifndef C_TYPE_TRAITS_H
