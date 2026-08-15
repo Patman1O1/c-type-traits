@@ -206,6 +206,16 @@ bool c_type_traits_testing_is_int_false_cases(void) {
     static_assert(!c_type_traits_is_int(void* volatile restrict));
     static_assert(!c_type_traits_is_int(void* const volatile restrict));
 
+    static_assert(!c_type_traits_is_int(void*[]));
+    static_assert(!c_type_traits_is_int(void* const[]));
+    static_assert(!c_type_traits_is_int(void* volatile[]));
+    static_assert(!c_type_traits_is_int(void* const volatile[]));
+    static_assert(!c_type_traits_is_int(void* _Atomic[]));
+    static_assert(!c_type_traits_is_int(void* restrict[]));
+    static_assert(!c_type_traits_is_int(void* const restrict[]));
+    static_assert(!c_type_traits_is_int(void* volatile restrict[]));
+    static_assert(!c_type_traits_is_int(void* const volatile restrict[]));
+
     return true;
 }
 
@@ -288,6 +298,16 @@ bool c_type_traits_testing_is_ptr_false_cases(void) {
     static_assert(!c_type_traits_is_ptr(const volatile char));
     static_assert(!c_type_traits_is_ptr(_Atomic char));
 
+    static_assert(!c_type_traits_is_ptr(void*[]));
+    static_assert(!c_type_traits_is_ptr(void* const[]));
+    static_assert(!c_type_traits_is_ptr(void* volatile[]));
+    static_assert(!c_type_traits_is_ptr(void* const volatile[]));
+    static_assert(!c_type_traits_is_ptr(void* _Atomic[]));
+    static_assert(!c_type_traits_is_ptr(void* restrict[]));
+    static_assert(!c_type_traits_is_ptr(void* const restrict[]));
+    static_assert(!c_type_traits_is_ptr(void* volatile restrict[]));
+    static_assert(!c_type_traits_is_ptr(void* const volatile restrict[]));
+
     return true;
 }
 
@@ -360,6 +380,16 @@ bool c_type_traits_testing_is_float_false_cases(void) {
     static_assert(!c_type_traits_is_float(void* volatile restrict));
     static_assert(!c_type_traits_is_float(void* const volatile restrict));
 
+    static_assert(!c_type_traits_is_float(void*[]));
+    static_assert(!c_type_traits_is_float(void* const[]));
+    static_assert(!c_type_traits_is_float(void* volatile[]));
+    static_assert(!c_type_traits_is_float(void* const volatile[]));
+    static_assert(!c_type_traits_is_float(void* _Atomic[]));
+    static_assert(!c_type_traits_is_float(void* restrict[]));
+    static_assert(!c_type_traits_is_float(void* const restrict[]));
+    static_assert(!c_type_traits_is_float(void* volatile restrict[]));
+    static_assert(!c_type_traits_is_float(void* const volatile restrict[]));
+
     return true;
 }
 
@@ -426,6 +456,16 @@ bool c_type_traits_testing_is_complex_false_cases(void) {
     static_assert(!c_type_traits_is_complex(void* volatile restrict));
     static_assert(!c_type_traits_is_complex(void* const volatile restrict));
 
+    static_assert(!c_type_traits_is_complex(void*[]));
+    static_assert(!c_type_traits_is_complex(void* const[]));
+    static_assert(!c_type_traits_is_complex(void* volatile[]));
+    static_assert(!c_type_traits_is_complex(void* const volatile[]));
+    static_assert(!c_type_traits_is_complex(void* _Atomic[]));
+    static_assert(!c_type_traits_is_complex(void* restrict[]));
+    static_assert(!c_type_traits_is_complex(void* const restrict[]));
+    static_assert(!c_type_traits_is_complex(void* volatile restrict[]));
+    static_assert(!c_type_traits_is_complex(void* const volatile restrict[]));
+
     return true;
 }
 
@@ -467,6 +507,16 @@ bool c_type_traits_testing_is_bool_false_cases(void) {
     static_assert(!c_type_traits_is_bool(void* const restrict));
     static_assert(!c_type_traits_is_bool(void* volatile restrict));
     static_assert(!c_type_traits_is_bool(void* const volatile restrict));
+
+    static_assert(!c_type_traits_is_bool(void*[]));
+    static_assert(!c_type_traits_is_bool(void* const[]));
+    static_assert(!c_type_traits_is_bool(void* volatile[]));
+    static_assert(!c_type_traits_is_bool(void* const volatile[]));
+    static_assert(!c_type_traits_is_bool(void* _Atomic[]));
+    static_assert(!c_type_traits_is_bool(void* restrict[]));
+    static_assert(!c_type_traits_is_bool(void* const restrict[]));
+    static_assert(!c_type_traits_is_bool(void* volatile restrict[]));
+    static_assert(!c_type_traits_is_bool(void* const volatile restrict[]));
 
     return true;
 }
@@ -528,6 +578,16 @@ bool c_type_traits_testing_is_struct_false_cases(void) {
     static_assert(!c_type_traits_is_struct(void* volatile restrict));
     static_assert(!c_type_traits_is_struct(void* const volatile restrict));
 
+    static_assert(!c_type_traits_is_struct(void*[]));
+    static_assert(!c_type_traits_is_struct(void* const[]));
+    static_assert(!c_type_traits_is_struct(void* volatile[]));
+    static_assert(!c_type_traits_is_struct(void* const volatile[]));
+    static_assert(!c_type_traits_is_struct(void* _Atomic[]));
+    static_assert(!c_type_traits_is_struct(void* restrict[]));
+    static_assert(!c_type_traits_is_struct(void* const restrict[]));
+    static_assert(!c_type_traits_is_struct(void* volatile restrict[]));
+    static_assert(!c_type_traits_is_struct(void* const volatile restrict[]));
+
     return true;
 }
 
@@ -587,6 +647,16 @@ bool c_type_traits_testing_is_enum_false_cases(void) {
     static_assert(!c_type_traits_is_enum(void* const restrict));
     static_assert(!c_type_traits_is_enum(void* volatile restrict));
     static_assert(!c_type_traits_is_enum(void* const volatile restrict));
+
+    static_assert(!c_type_traits_is_enum(void*[]));
+    static_assert(!c_type_traits_is_enum(void* const[]));
+    static_assert(!c_type_traits_is_enum(void* volatile[]));
+    static_assert(!c_type_traits_is_enum(void* const volatile[]));
+    static_assert(!c_type_traits_is_enum(void* _Atomic[]));
+    static_assert(!c_type_traits_is_enum(void* restrict[]));
+    static_assert(!c_type_traits_is_enum(void* const restrict[]));
+    static_assert(!c_type_traits_is_enum(void* volatile restrict[]));
+    static_assert(!c_type_traits_is_enum(void* const volatile restrict[]));
 
     return true;
 }
@@ -648,6 +718,16 @@ bool c_type_traits_testing_is_union_false_cases(void) {
     static_assert(!c_type_traits_is_union(void* volatile restrict));
     static_assert(!c_type_traits_is_union(void* const volatile restrict));
 
+    static_assert(!c_type_traits_is_union(void*[]));
+    static_assert(!c_type_traits_is_union(void* const[]));
+    static_assert(!c_type_traits_is_union(void* volatile[]));
+    static_assert(!c_type_traits_is_union(void* const volatile[]));
+    static_assert(!c_type_traits_is_union(void* _Atomic[]));
+    static_assert(!c_type_traits_is_union(void* restrict[]));
+    static_assert(!c_type_traits_is_union(void* const restrict[]));
+    static_assert(!c_type_traits_is_union(void* volatile restrict[]));
+    static_assert(!c_type_traits_is_union(void* const volatile restrict[]));
+
     return true;
 }
 
@@ -675,6 +755,10 @@ bool c_type_traits_testing_is_array_true_cases(void) {
     static_assert(c_type_traits_is_array(void* volatile[]));
     static_assert(c_type_traits_is_array(void* const volatile[]));
     static_assert(c_type_traits_is_array(void* _Atomic[]));
+    static_assert(c_type_traits_is_array(void* restrict[]));
+    static_assert(c_type_traits_is_array(void* const restrict[]));
+    static_assert(c_type_traits_is_array(void* volatile restrict[]));
+    static_assert(c_type_traits_is_array(void* const volatile restrict[]));
 
     return true;
 }
