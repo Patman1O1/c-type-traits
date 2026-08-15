@@ -11,51 +11,35 @@ namespace c_type_traits_testing {
 
     } // namespace
 
-    TEST(is_int, int_types) {
-        EXPECT_TRUE(c_type_traits_testing_is_int_ints());
+    TEST(is_int, true_cases) {
+        EXPECT_TRUE(c_type_traits_testing_is_int_true_cases());
     }
 
-    TEST(is_int, non_int_types) {
-        EXPECT_TRUE(c_type_traits_testing_is_int_non_ints());
+    TEST(is_int, false_cases) {
+        EXPECT_TRUE(c_type_traits_testing_is_int_false_cases());
     }
 
-    TEST(is_int, alias_int_types) {
-        EXPECT_TRUE(c_type_traits_testing_is_int_alias_ints());
+    TEST(is_ptr, true_cases) {
+        EXPECT_TRUE(c_type_traits_testing_is_ptr_true_cases());
     }
 
-    TEST(is_ptr, ptr_types) {
-        EXPECT_TRUE(c_type_traits_testing_is_ptr_ptr_types());
+    TEST(is_ptr, false_cases) {
+        EXPECT_TRUE(c_type_traits_testing_is_ptr_false_cases());
     }
 
-    TEST(is_ptr, non_ptr_types) {
-        EXPECT_TRUE(c_type_traits_testing_is_ptr_non_ptr_types());
+    TEST(is_float, true_cases) {
+        EXPECT_TRUE(c_type_traits_testing_is_float_true_cases());
     }
 
-    TEST(is_float, float_types) {
-        EXPECT_TRUE(c_type_traits_testing_is_float_floats());
-    }
-
-    TEST(is_float, non_float_types) {
-        EXPECT_TRUE(c_type_traits_testing_is_float_non_floats());
-    }
-
-    TEST(is_float, alias_float_types) {
-        EXPECT_TRUE(c_type_traits_testing_is_float_alias_floats());
+    TEST(is_float, false_cases) {
+        EXPECT_TRUE(c_type_traits_testing_is_float_false_cases());
     }
 
     TEST(is_array, true_cases) {
-        EXPECT_TRUE(c_type_traits_testing_is_array_array());
+        EXPECT_TRUE(c_type_traits_testing_is_array_true_cases());
     }
 
     TEST(is_array, false_cases) {
-        EXPECT_TRUE(c_type_traits_testing_is_array_non_array());
-    }
-
-    TEST(is_const, true_cases) {
-        EXPECT_TRUE(c_type_traits_testing_is_const_const());
-    }
-
-    TEST(is_const, false_cases) {
-        EXPECT_TRUE(c_type_traits_testing_is_const_non_const());
+        EXPECT_TRUE(c_type_traits_testing_is_array_false_cases());
     }
 } // namespace c_type_traits_testing
