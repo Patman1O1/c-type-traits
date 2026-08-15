@@ -43,5 +43,8 @@
 
 #define c_type_traits_is_volatile(type) (bool)__is_volatile(type)
 
+#define c_type_traits_is_atomic(type) \
+    __builtin_types_compatible_p(type, _Atomic typeof_unqual(type))
+
 #endif // #ifndef C_TYPE_TRAITS_H
 
