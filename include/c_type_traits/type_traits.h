@@ -10,6 +10,8 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+//#define c_type_traits_classify_type(type) _Generic((typeof_unqual(type)){0},
+
 #define c_type_traits_is_int(type) \
     (__builtin_classify_type(type) == 1)
 
@@ -37,16 +39,12 @@
 #define c_type_traits_is_array(type) \
     (__builtin_classify_type(type) == 14)
 
-#define c_type_traits_is_const(type) _Generic(&(typeof_unqual(type)){0}, \
-    const typeof_unqual(type)*: true,                  \
-    default: false                                     \
-)
+#define c_type_traits_is_const(type) (bool)__is_const(type)
 
 #define c_type_traits_is_volatile(type) _Generic(&(typeof_unqual(type)){0}, \
     volatile typeof_unqual(type)*: true,                  \
     default: false                                        \
 )
-
 
 #endif // #ifndef C_TYPE_TRAITS_H
 
