@@ -7,8 +7,8 @@
 
 // ISO Includes
 #include <complex.h>
-#include <stdio.h>
 #include <stdbool.h>
+#include <stdint.h>
 
 #define c_type_traits_is_int(type) \
     (__builtin_classify_type(type) == 1)
