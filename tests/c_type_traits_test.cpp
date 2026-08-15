@@ -42,4 +42,20 @@ namespace c_type_traits_testing {
     TEST(is_float, alias_float_types) {
         EXPECT_TRUE(c_type_traits_testing_is_float_alias_floats());
     }
+
+    TEST(is_array, true_cases) {
+        EXPECT_TRUE(c_type_traits_testing_is_array_array());
+    }
+
+    TEST(is_array, false_cases) {
+        EXPECT_TRUE(c_type_traits_testing_is_array_non_array());
+    }
+
+    TEST(is_const, true_cases) {
+        EXPECT_TRUE(c_type_traits_testing_is_const_const());
+    }
+
+    TEST(is_const, false_cases) {
+        EXPECT_TRUE(c_type_traits_testing_is_const_non_const());
+    }
 } // namespace c_type_traits_testing
