@@ -794,3 +794,27 @@ bool c_type_traits_testing_is_array_false_cases(void) {
 
     return true;
 }
+
+bool c_type_traits_testing_is_const_true_cases(void) {
+    return true;
+}
+
+bool c_type_traits_testing_is_const_false_cases(void) {
+    return true;
+}
+
+bool c_type_traits_testing_is_volatile_true_cases(void) {
+    return true;
+}
+
+bool c_type_traits_testing_is_volatile_false_cases(void) {
+    return true;
+}
+
+bool c_type_traits_testing_is_atomic_true_cases(void) {
+    return true;
+}
+
+bool c_type_traits_testing_is_atomic_false_cases(void) {
+    return true;
+}
