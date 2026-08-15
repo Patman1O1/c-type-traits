@@ -47,6 +47,10 @@ extern bool c_type_traits_testing_is_volatile_true_cases(void);
 
 extern bool c_type_traits_testing_is_volatile_false_cases(void);
 
+extern bool c_type_traits_testing_is_atomic_true_cases(void);
+
+extern bool c_type_traits_testing_is_atomic_false_cases(void);
+
 #ifdef __cplusplus
 }
 #endif // #ifdef __cplusplus
