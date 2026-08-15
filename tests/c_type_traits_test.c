@@ -35,7 +35,7 @@ typedef double complex complex64_t;
 
 typedef long double complex complex128_t;
 
-bool c_type_traits_testing_is_int_ints(void) {
+bool c_type_traits_testing_is_int_true_cases(void) {
     static_assert(c_type_traits_is_int(char));
     static_assert(c_type_traits_is_int(signed char));
     static_assert(c_type_traits_is_int(unsigned char));
@@ -45,10 +45,22 @@ bool c_type_traits_testing_is_int_ints(void) {
     static_assert(c_type_traits_is_int(unsigned long int));
     static_assert(c_type_traits_is_int(long long int));
     static_assert(c_type_traits_is_int(unsigned long long int));
+
+    static_assert(c_type_traits_is_int(int8_t));
+    static_assert(c_type_traits_is_int(uint8_t));
+    static_assert(c_type_traits_is_int(int16_t));
+    static_assert(c_type_traits_is_int(uint16_t));
+    static_assert(c_type_traits_is_int(int32_t));
+    static_assert(c_type_traits_is_int(uint32_t));
+    static_assert(c_type_traits_is_int(int64_t));
+    static_assert(c_type_traits_is_int(uint64_t));
+    static_assert(c_type_traits_is_int(size_t));
+    static_assert(c_type_traits_is_int(ptrdiff_t));
+    
     return true;
 }
 
-bool c_type_traits_testing_is_int_non_ints(void) {
+bool c_type_traits_testing_is_int_false_cases(void) {
     static_assert(!c_type_traits_is_int(bool));
     static_assert(!c_type_traits_is_int(float));
     static_assert(!c_type_traits_is_int(double));
@@ -60,22 +72,7 @@ bool c_type_traits_testing_is_int_non_ints(void) {
     return true;
 }
 
-bool c_type_traits_testing_is_int_alias_ints(void) {
-    static_assert(c_type_traits_is_int(int8_t));
-    static_assert(c_type_traits_is_int(uint8_t));
-    static_assert(c_type_traits_is_int(int16_t));
-    static_assert(c_type_traits_is_int(uint16_t));
-    static_assert(c_type_traits_is_int(int32_t));
-    static_assert(c_type_traits_is_int(uint32_t));
-    static_assert(c_type_traits_is_int(int64_t));
-    static_assert(c_type_traits_is_int(uint64_t));
-    static_assert(c_type_traits_is_int(size_t));
-
-    static_assert(c_type_traits_is_int(ptrdiff_t));
-    return true;
-}
-
-bool c_type_traits_testing_is_ptr_ptr_types(void) {
+bool c_type_traits_testing_is_ptr_true_cases(void) {
     static_assert(c_type_traits_is_ptr(void*));
     static_assert(c_type_traits_is_ptr(int*));
     static_assert(c_type_traits_is_ptr(char*));
@@ -85,7 +82,7 @@ bool c_type_traits_testing_is_ptr_ptr_types(void) {
     return true;
 }
 
-bool c_type_traits_testing_is_ptr_non_ptr_types(void) {
+bool c_type_traits_testing_is_ptr_false_cases(void) {
     static_assert(!c_type_traits_is_ptr(intptr_t));
     static_assert(!c_type_traits_is_ptr(uintptr_t));
     static_assert(!c_type_traits_is_ptr(int));
@@ -94,15 +91,19 @@ bool c_type_traits_testing_is_ptr_non_ptr_types(void) {
     return true;
 }
 
-bool c_type_traits_testing_is_float_floats(void) {
+bool c_type_traits_testing_is_float_true_cases(void) {
     static_assert(c_type_traits_is_float(float));
     static_assert(c_type_traits_is_float(double));
     static_assert(c_type_traits_is_float(long double));
 
+    static_assert(c_type_traits_is_float(float32_t));
+    static_assert(c_type_traits_is_float(float64_t));
+    static_assert(c_type_traits_is_float(float128_t));
+
     return true;
 }
 
-bool c_type_traits_testing_is_float_non_floats(void) {
+bool c_type_traits_testing_is_float_false_cases(void) {
     static_assert(!c_type_traits_is_float(int));
     static_assert(!c_type_traits_is_float(char));
     static_assert(!c_type_traits_is_float(bool));
@@ -110,15 +111,7 @@ bool c_type_traits_testing_is_float_non_floats(void) {
     return true;
 }
 
-bool c_type_traits_testing_is_float_alias_floats(void) {
-    static_assert(c_type_traits_is_float(float32_t));
-    static_assert(c_type_traits_is_float(float64_t));
-    static_assert(c_type_traits_is_float(float128_t));
-    
-    return true;
-}
-
-bool c_type_traits_testing_is_complex_complex(void) {
+bool c_type_traits_testing_is_complex_true_cases(void) {
     static_assert(c_type_traits_is_complex(float complex));
     static_assert(c_type_traits_is_complex(double complex));
     static_assert(c_type_traits_is_complex(long double complex));
@@ -126,7 +119,7 @@ bool c_type_traits_testing_is_complex_complex(void) {
     return true;
 }
 
-bool c_type_traits_testing_is_complex_non_complex(void) {
+bool c_type_traits_testing_is_complex_false_cases(void) {
     static_assert(!c_type_traits_is_complex(float));
     static_assert(!c_type_traits_is_complex(double));
     static_assert(!c_type_traits_is_complex(long double));
@@ -136,13 +129,13 @@ bool c_type_traits_testing_is_complex_non_complex(void) {
     return true;
 }
 
-bool c_type_traits_testing_is_bool_bool(void) {
+bool c_type_traits_testing_is_bool_true_cases(void) {
     static_assert(c_type_traits_is_bool(bool));
 
     return true;
 }
 
-bool c_type_traits_testing_is_bool_non_bool(void) {
+bool c_type_traits_testing_is_bool_false_cases(void) {
     static_assert(!c_type_traits_is_bool(int));
     static_assert(!c_type_traits_is_bool(float));
     static_assert(!c_type_traits_is_bool(char));
@@ -150,13 +143,14 @@ bool c_type_traits_testing_is_bool_non_bool(void) {
     return true;
 }
 
-bool c_type_traits_testing_is_struct_struct(void) {
+bool c_type_traits_testing_is_struct_true_cases(void) {
     static_assert(c_type_traits_is_struct(struct test_struct));
+    static_assert(c_type_traits_is_struct(test_struct_typedef));
 
     return true;
 }
 
-bool c_type_traits_testing_is_struct_non_struct(void) {
+bool c_type_traits_testing_is_struct_false_cases(void) {
     static_assert(!c_type_traits_is_struct(union test_union));
     static_assert(!c_type_traits_is_struct(enum test_enum));
     static_assert(!c_type_traits_is_struct(int));
@@ -166,19 +160,14 @@ bool c_type_traits_testing_is_struct_non_struct(void) {
     return true;
 }
 
-bool c_type_traits_testing_is_struct_alias_struct(void) {
-    static_assert(c_type_traits_is_struct(test_struct_typedef));
-
-    return true;
-}
-
-bool c_type_traits_testing_is_enum_enum(void) {
+bool c_type_traits_testing_is_enum_true_cases(void) {
     static_assert(c_type_traits_is_enum(enum test_enum));
+    static_assert(c_type_traits_is_enum(test_enum_typedef));
 
     return true;
 }
 
-bool c_type_traits_testing_is_enum_non_enum(void) {
+bool c_type_traits_testing_is_enum_false_cases(void) {
     static_assert(!c_type_traits_is_enum(struct test_struct));
     static_assert(!c_type_traits_is_enum(union test_union));
     static_assert(!c_type_traits_is_enum(int));
@@ -189,19 +178,14 @@ bool c_type_traits_testing_is_enum_non_enum(void) {
     return true;
 }
 
-bool c_type_traits_testing_is_enum_alias_enum(void) {
-    static_assert(c_type_traits_is_enum(test_enum_typedef));
-
-    return true;
-}
-
-bool c_type_traits_testing_is_union_union(void) {
+bool c_type_traits_testing_is_union_true_cases(void) {
     static_assert(c_type_traits_is_union(union test_union));
+    static_assert(c_type_traits_is_union(test_union_typedef));
 
     return true;
 }
 
-bool c_type_traits_testing_is_union_non_union(void) {
+bool c_type_traits_testing_is_union_false_cases(void) {
     static_assert(!c_type_traits_is_union(struct test_struct));
     static_assert(!c_type_traits_is_union(enum test_enum));
     static_assert(!c_type_traits_is_union(int));
@@ -212,42 +196,21 @@ bool c_type_traits_testing_is_union_non_union(void) {
     return true;
 }
 
-bool c_type_traits_testing_is_union_alias_union(void) {
-    static_assert(c_type_traits_is_union(test_union_typedef));
-
-    return true;
-}
-
-bool c_type_traits_testing_is_array_array(void) {
+bool c_type_traits_testing_is_array_true_cases(void) {
     static_assert(c_type_traits_is_array(int[]));
     static_assert(c_type_traits_is_array(char[]));
     static_assert(c_type_traits_is_array(float[]));
+    //static_assert(c_type_traits_is_array(void*[]));
 
     return true;
 }
 
-bool c_type_traits_testing_is_array_non_array(void) {
+bool c_type_traits_testing_is_array_false_cases(void) {
     static_assert(!c_type_traits_is_array(void*));
     static_assert(!c_type_traits_is_array(int));
     static_assert(!c_type_traits_is_array(float));
     static_assert(!c_type_traits_is_array(char));
 
-    return true;
-}
-
-bool c_type_traits_testing_is_const_const(void) {
-    return true;
-}
-
-bool c_type_traits_testing_is_const_non_const(void) {
-    return true;
-}
-
-bool c_type_traits_testing_is_volatile_volatile(void) {
-    return true;
-}
-
-bool c_type_traits_testing_is_volatile_non_volatile(void) {
     return true;
 }
 
