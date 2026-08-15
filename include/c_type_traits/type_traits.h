@@ -41,10 +41,7 @@
 
 #define c_type_traits_is_const(type) (bool)__is_const(type)
 
-#define c_type_traits_is_volatile(type) _Generic(&(typeof_unqual(type)){0}, \
-    volatile typeof_unqual(type)*: true,                  \
-    default: false                                        \
-)
+#define c_type_traits_is_volatile(type) (bool)__is_volatile(type)
 
 #endif // #ifndef C_TYPE_TRAITS_H
 
