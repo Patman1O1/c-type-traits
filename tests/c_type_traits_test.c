@@ -670,11 +670,11 @@ bool c_type_traits_testing_is_array_true_cases(void) {
     static_assert(c_type_traits_is_array(const volatile float[]));
     static_assert(c_type_traits_is_array(_Atomic float[]));
 
-    // static_assert(c_type_traits_is_array(void*[]));
-    // static_assert(c_type_traits_is_array(void* const[]));
-    // static_assert(c_type_traits_is_array(void* volatile[]));
-    // static_assert(c_type_traits_is_array(void* const volatile[]));
-    // static_assert(c_type_traits_is_array(void* _Atomic[]));
+    static_assert(c_type_traits_is_array(void*[]));
+    static_assert(c_type_traits_is_array(void* const[]));
+    static_assert(c_type_traits_is_array(void* volatile[]));
+    static_assert(c_type_traits_is_array(void* const volatile[]));
+    static_assert(c_type_traits_is_array(void* _Atomic[]));
 
     return true;
 }
