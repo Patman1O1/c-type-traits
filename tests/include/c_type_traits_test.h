@@ -51,10 +51,13 @@ extern bool c_type_traits_testing_is_array_array(void);
 
 extern bool c_type_traits_testing_is_array_non_array(void);
 
-extern bool c_type_traits_testing_is_function_function(void);
+extern bool c_type_traits_testing_is_const_const(void);
 
-extern bool c_type_traits_testing_is_function_non_function(void);
+extern bool c_type_traits_testing_is_const_non_const(void);
 
+extern bool c_type_traits_testing_is_volatile_volatile(void);
+
+extern bool c_type_traits_testing_is_volatile_non_volatile(void);
 
 #ifdef __cplusplus
 }
