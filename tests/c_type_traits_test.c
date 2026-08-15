@@ -234,3 +234,20 @@ bool c_type_traits_testing_is_array_non_array(void) {
 
     return true;
 }
+
+bool c_type_traits_testing_is_const_const(void) {
+    return true;
+}
+
+bool c_type_traits_testing_is_const_non_const(void) {
+    return true;
+}
+
+bool c_type_traits_testing_is_volatile_volatile(void) {
+    return true;
+}
+
+bool c_type_traits_testing_is_volatile_non_volatile(void) {
+    return true;
+}
+
