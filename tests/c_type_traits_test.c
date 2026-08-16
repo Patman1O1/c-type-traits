@@ -796,25 +796,133 @@ bool c_type_traits_testing_is_array_false_cases(void) {
 }
 
 bool c_type_traits_testing_is_const_true_cases(void) {
+    static_assert(c_type_traits_is_const(const bool));
+    static_assert(c_type_traits_is_const(const int));
+    static_assert(c_type_traits_is_const(const float));
+    static_assert(c_type_traits_is_const(const char));
+    static_assert(c_type_traits_is_const(const void*));
+    static_assert(c_type_traits_is_const(const int[]));
+
+    static_assert(c_type_traits_is_const(const volatile bool));
+    static_assert(c_type_traits_is_const(const volatile int));
+    static_assert(c_type_traits_is_const(const volatile float));
+    static_assert(c_type_traits_is_const(const volatile char));
+    static_assert(c_type_traits_is_const(void* const volatile));
+    static_assert(c_type_traits_is_const(void* const restrict));
+    static_assert(c_type_traits_is_const(void* const volatile restrict));
+    static_assert(c_type_traits_is_const(const volatile int[]));
+
     return true;
 }
 
 bool c_type_traits_testing_is_const_false_cases(void) {
+    static_assert(!c_type_traits_is_const(void*));
+    static_assert(!c_type_traits_is_const(void* volatile));
+    static_assert(!c_type_traits_is_const(void* _Atomic));
+    static_assert(!c_type_traits_is_const(void* restrict));
+    static_assert(!c_type_traits_is_const(void* volatile restrict));
+
+    static_assert(!c_type_traits_is_const(int));
+    static_assert(!c_type_traits_is_const(volatile int));
+    static_assert(!c_type_traits_is_const(_Atomic int));
+
+    static_assert(!c_type_traits_is_const(float));
+    static_assert(!c_type_traits_is_const(volatile float));
+    static_assert(!c_type_traits_is_const(_Atomic float));
+
+    static_assert(!c_type_traits_is_const(char));
+    static_assert(!c_type_traits_is_const(volatile char));
+    static_assert(!c_type_traits_is_const(_Atomic char));
+
+    static_assert(!c_type_traits_is_const(bool));
+    static_assert(!c_type_traits_is_const(volatile bool));
+    static_assert(!c_type_traits_is_const(_Atomic bool));
+
     return true;
 }
 
 bool c_type_traits_testing_is_volatile_true_cases(void) {
+    static_assert(c_type_traits_is_volatile(volatile int));
+    static_assert(c_type_traits_is_volatile(volatile float));
+    static_assert(c_type_traits_is_volatile(volatile char));
+    static_assert(c_type_traits_is_volatile(void* volatile));
+    static_assert(c_type_traits_is_volatile(volatile int[]));
+
+    static_assert(c_type_traits_is_volatile(const volatile int));
+    static_assert(c_type_traits_is_volatile(const volatile float));
+    static_assert(c_type_traits_is_volatile(const volatile char));
+    static_assert(c_type_traits_is_volatile(void* const volatile));
+    static_assert(c_type_traits_is_volatile(const volatile int[]));
+
     return true;
 }
 
 bool c_type_traits_testing_is_volatile_false_cases(void) {
+    static_assert(!c_type_traits_is_volatile(void*));
+    static_assert(!c_type_traits_is_volatile(void* const));
+    static_assert(!c_type_traits_is_volatile(void* _Atomic));
+    static_assert(!c_type_traits_is_volatile(void* restrict));
+    static_assert(!c_type_traits_is_volatile(void* const restrict));
+
+    static_assert(!c_type_traits_is_volatile(int));
+    static_assert(!c_type_traits_is_volatile(const int));
+    static_assert(!c_type_traits_is_volatile(_Atomic int));
+
+    static_assert(!c_type_traits_is_volatile(float));
+    static_assert(!c_type_traits_is_volatile(const float));
+    static_assert(!c_type_traits_is_volatile(_Atomic float));
+
+    static_assert(!c_type_traits_is_volatile(char));
+    static_assert(!c_type_traits_is_volatile(const char));
+    static_assert(!c_type_traits_is_volatile(_Atomic char));
+
+    static_assert(!c_type_traits_is_volatile(bool));
+    static_assert(!c_type_traits_is_volatile(const bool));
+    static_assert(!c_type_traits_is_volatile(_Atomic bool));
+
     return true;
 }
 
 bool c_type_traits_testing_is_atomic_true_cases(void) {
+    static_assert(c_type_traits_is_atomic(_Atomic bool));
+    static_assert(c_type_traits_is_atomic(_Atomic int));
+    static_assert(c_type_traits_is_atomic(_Atomic float));
+    static_assert(c_type_traits_is_atomic(_Atomic char));
+    static_assert(c_type_traits_is_atomic(void* _Atomic));
+    static_assert(c_type_traits_is_atomic(_Atomic int[]));
+
     return true;
 }
 
 bool c_type_traits_testing_is_atomic_false_cases(void) {
+    static_assert(!c_type_traits_is_atomic(void*));
+    static_assert(!c_type_traits_is_atomic(void* const));
+    static_assert(!c_type_traits_is_atomic(void* volatile));
+    static_assert(!c_type_traits_is_atomic(void* const volatile));
+    static_assert(!c_type_traits_is_atomic(void* restrict));
+    static_assert(!c_type_traits_is_atomic(void* const restrict));
+    static_assert(!c_type_traits_is_atomic(void* volatile restrict));
+    static_assert(!c_type_traits_is_atomic(void* const volatile restrict));
+
+    static_assert(!c_type_traits_is_atomic(bool));
+    static_assert(!c_type_traits_is_atomic(const bool));
+    static_assert(!c_type_traits_is_atomic(volatile bool));
+    static_assert(!c_type_traits_is_atomic(const volatile bool));
+
+    static_assert(!c_type_traits_is_atomic(int));
+    static_assert(!c_type_traits_is_atomic(const int));
+    static_assert(!c_type_traits_is_atomic(volatile int));
+    static_assert(!c_type_traits_is_atomic(const volatile int));
+
+    static_assert(!c_type_traits_is_atomic(float));
+    static_assert(!c_type_traits_is_atomic(const float));
+    static_assert(!c_type_traits_is_atomic(volatile float));
+    static_assert(!c_type_traits_is_atomic(const volatile float));
+
+    static_assert(!c_type_traits_is_atomic(char));
+    static_assert(!c_type_traits_is_atomic(const char));
+    static_assert(!c_type_traits_is_atomic(volatile char));
+    static_assert(!c_type_traits_is_atomic(const volatile char));
+
     return true;
 }
